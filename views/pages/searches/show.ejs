@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../../layout/head')  %>
+
+
+<body id="sb">
+    <%- include('../../layout/header')  %>
+
+    <main>
+
+        <% searchResults.forEach( book => { %>
+        <form method="post" action="/add-book">
+            <section id="book">
+                <img id="img" src=<%= book.image %> alt="">
+                <h2><%=book.title %></h2>
+                <h4><%=book.author %></h4>
+                <p><%=book.description %></p>
+                <h4><%=book.isbn %></h4>
+                <h4><%=book.bookshelf %></h4>
+
+                <input class="addClass" type="text" value="<%= book.image %>" name="bookimg">
+                <input class="addClass" type="text" value="<%=book.title %>" name="booktitle">
+                <input class="addClass" type="text" value="<%=book.author %>" name="bookauther">
+                <input class="addClass" type="text" value="<%=book.description %>" name="bookdescription">
+                <input class="addClass" type="text" value="<%=book.isbn %>" name="bookisbn">
+                <input class="addClass" type="text" value="<%=book.bookshelf %>" name="bookshelf">
+
+                <button class="select" type="submit">Add book to my collection</button>
+            </section>
+        </form>
+
+
+        <% }) %>
+
+    </main>
+    <%- include('../../layout/footer')  %>
+
+</body>
+
+</html>

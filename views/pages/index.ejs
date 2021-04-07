@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../layout/head')  %>
+
+
+
+<body>
+    <%- include('../layout/header')  %>
+    <main>
+        <% books.forEach(details => { %>
+        <section id="page">
+            <img src=<%= details.bookimage %> />
+            <h2><%=details.title %></h2>
+            <h4><%=details.author %></h4>
+            <p><%=details.bookdescription %></p>
+            <a href="/books/sohw/<%= details.id%>">Details</a>
+        </section>
+        <% }) %>
+    </main>
+    <%- include('../layout/footer')  %>
+
+</body>
+
+
+</html>
